@@ -1,6 +1,10 @@
-# Need to install flask-mail to run
-# Also create an environment variable MAIL_PASSWORD:
+# To run, do the following first:
+# 1) install flask-mail
+# 2) create an environment variable MAIL_PASSWORD:
 #    export MAIL_PASSWORD=your_gmail_password
+# 3) Modify MAIL_USERNAME below to your gmail address (preferably create a test account).
+# 4) Modify MAIL_DEFAULT_SENDER as well 
+# 5) In the security settings of your Google account, turn on "Less Secure App Access"
 
 from flask import Flask, render_template, flash
 from flask_mail import Mail, Message
@@ -43,7 +47,6 @@ def send_mail():
         subject = 'Test Flask email'
         msg = Message(subject, recipients=[recipient], body = message)
         mail.send(msg)
-        flash('Message sent!')
         mail_form.email.data = ''
         mail_form.message.data = ''
     return render_template('index.html', form=mail_form)
