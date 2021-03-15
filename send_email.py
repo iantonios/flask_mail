@@ -1,7 +1,9 @@
 # To run, do the following first:
-# 1) install flask-mail
+# 1) install flask-mail: sudo pip3 install flask-mail
 # 2) create an environment variable MAIL_PASSWORD:
 #    export MAIL_PASSWORD=your_gmail_password
+#    export FLASK_APP=send_email.py
+#    export FLASK_DEBUG=1
 # 3) Modify MAIL_USERNAME below to your gmail address (preferably create a test account).
 # 4) Modify MAIL_DEFAULT_SENDER as well 
 # 5) In the security settings of your Google account, turn on "Less Secure App Access"
