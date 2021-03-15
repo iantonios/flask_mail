@@ -1,5 +1,5 @@
 # To run, do the following first:
-# 1) install flask-mail and flask-bootstrap: sudo pip3 install flask-mail flask-bootstrap
+# 1) install flask-mail and flask-bootstrap: sudo pip3 install flask-mail flask-bootstrap flask-moment
 # 2) create an environment variable MAIL_PASSWORD:
 #    export MAIL_PASSWORD=your_gmail_password
 #    export FLASK_APP=send_email.py
@@ -7,6 +7,8 @@
 # 3) Modify MAIL_USERNAME below to your gmail address (preferably create a test account).
 # 4) Modify MAIL_DEFAULT_SENDER as well 
 # 5) In the security settings of your Google account, turn on "Less Secure App Access"
+# 6) In case Google generates a security warning (sent by email), you might need to clear it in 
+#    order for the email to be sent.  
 
 from flask import Flask, render_template, flash
 from flask_mail import Mail, Message
@@ -19,7 +21,7 @@ import os
 
 
 class SendEmail(FlaskForm):
-    email = StringField('Recipient: ', validators=[DataRequired(), Email()])
+    email = StringField('Recipient: ', validators=[DataRequired()])
     message = TextAreaField('Your message:', validators=[DataRequired()])
     submit = SubmitField('Send')
 
