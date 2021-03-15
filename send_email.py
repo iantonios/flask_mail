@@ -1,5 +1,5 @@
 # To run, do the following first:
-# 1) install flask-mail: sudo pip3 install flask-mail
+# 1) install flask-mail and flask-bootstrap: sudo pip3 install flask-mail flask-bootstrap
 # 2) create an environment variable MAIL_PASSWORD:
 #    export MAIL_PASSWORD=your_gmail_password
 #    export FLASK_APP=send_email.py
